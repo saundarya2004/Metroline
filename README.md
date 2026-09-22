@@ -1,98 +1,58 @@
-# 🚇 MetroLine
+# 🚇 MetroLine — Metro Ticket Booking & Management System
 
-### Smart Metro Management & Journey Assistance Platform
-
-MetroLine is a full-stack web application designed to enhance the metro commuting experience through **intelligent journey assistance, automated station notifications, route management, and digital metro card services**.
-
-The project demonstrates the development of a real-world, modular application using **Java, Spring Boot, RESTful APIs, React.js, and SQL/Oracle**, with a focus on maintainable architecture, database-driven operations, automation, and user experience.
+**MetroLine** is a full-stack web application for managing metro routes, stations, users, and ticket bookings. The system provides separate functionalities for **Users and Administrators**, with secure authentication and a React-based frontend connected to a Spring Boot REST API.
 
 ---
 
-## 📌 Problem Statement
+## 📌 Project Overview
 
-Metro passengers often need to manage multiple aspects of their journey, including identifying the correct route, monitoring upcoming stations, keeping track of their metro card balance, and managing transactions.
+MetroLine simplifies the metro ticket booking process by allowing users to search for routes between stations, view journey details, calculate fares, book tickets, and manage their booking history.
 
-MetroLine aims to bring these services together into a **single, user-friendly platform**, reducing manual effort and providing timely journey assistance.
+The application follows a layered backend architecture using **Spring Boot, Spring Data JPA, and Hibernate**, with **MySQL** for persistent data storage.
 
----
-
-## 💡 Solution
-
-MetroLine provides an integrated platform where users can:
-
-- Plan and manage metro journeys
-- Access metro route and station information
-- Receive automated upcoming-station alerts
-- Monitor their destination and journey status
-- Manage a digital metro card
-- Check card balance and recharge
-- View transaction history
-- Receive low-balance notifications
-- Receive personalized journey completion messages
+Authentication and authorization are implemented using **JWT (JSON Web Token)** with role-based access for Users and Administrators.
 
 ---
 
-## 🚀 Core Features
+## ✨ Features
 
-### 🗺️ Journey & Route Management
+### 👤 User Features
 
-- Metro route information
-- Station information
-- Journey planning
-- Route assistance
-- Boarding station management
-- Destination station management
-- Journey status assistance
+* User registration and login
+* JWT-based authentication
+* Search metro routes between stations
+* View available route information
+* View intermediate stops
+* View journey distance
+* View estimated travel time
+* Calculate applicable fare
+* Book metro tickets
+* View booking/ticket history
+* Cancel bookings
 
-### 🔔 Automated Journey Notifications
+### 🛠️ Admin Features
 
-- Upcoming-station alerts
-- Destination alerts
-- Automated journey notifications
-- Timely passenger assistance
-- Personalized journey completion messages
-- "Happy Journey" / travel notifications
+* Admin authentication
+* Role-based access control
+* Manage metro-related data through secured backend endpoints
+* Manage stations, routes, and booking-related information
 
-### 💳 Digital Metro Card
+### 🔐 Security
 
-- Digital metro card management
-- Card balance tracking
-- Recharge functionality
-- Transaction history
-- Low-balance notifications
-
-### ⚙️ Application Management
-
-- Structured backend architecture
-- RESTful API communication
-- Database-driven operations
-- Modular application design
-- Responsive and user-focused interface
+* JWT-based authentication
+* Role-based authorization
+* Protected backend endpoints
+* Custom JWT authentication filter
 
 ---
 
 ## 🏗️ System Architecture
 
 ```text
-                    ┌──────────────────────┐
-                    │      React.js        │
-                    │      Frontend        │
-                    └──────────┬───────────┘
-                               │
-                               │ HTTP / REST
-                               ▼
-                    ┌──────────────────────┐
-                    │      REST APIs       │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │     Spring Boot      │
-                    │   Business Logic     │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │     SQL / Oracle     │
-                    │       Database       │
-                    └──────────────────────┘
+                    ┌─────────────────────┐
+                    │     React.js UI     │
+                    │                     │
+                    │  React Router       │
+                    │  Axios              │
+                    └──────────┬──────
+```
